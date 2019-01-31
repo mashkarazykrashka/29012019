@@ -12,6 +12,7 @@
 <?php
 function sortirovka($sort) 
 {
+	shiffle($sort);
 	$n=count($sort);
 	for ($k=$n; $k>=2; $k--) 
 		{
@@ -32,6 +33,7 @@ print_r(sortirovka($new));
 $time_start = microtime(1);
 for ($f=1; $f<=1000; $f++)
 	{
+		shiffle($new);
 		sortirovka($new);
 	}
 $time_end = microtime (1);
