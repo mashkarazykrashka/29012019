@@ -31,24 +31,24 @@ function sortirovka($sort)
 $new = array(2,8,14,22,7,111,97,15,72,6);
 print_r(sortirovka($new));
 $time_start = microtime(1);
-for ($f=1; $f<=1000; $f++)
+for ($f=1; $f<=10000; $f++)
 	{
 		shuffle($new);
 		sortirovka($new);
 	}
 $time_end = microtime (1);
 $time1 = $time_end - $time_start;
-echo "Сортировка массива из 10 элементов методом пузырька, выполненная 1000 раз занимает $time1 секунд.\n";
+echo "Сортировка массива из 10 элементов методом пузырька, выполненная 10000 раз занимает $time1 секунд.\n";
 echo "<br>";
 $time_start = microtime(1);
 $new = array(2,8,14,22,7,111,97,15,72,6);
-for ($f=1; $f<=1000; $f++)
+for ($f=1; $f<=10000; $f++)
 	{
 		sort($new);
 	}
 $time_end = microtime (1);
 $time2 = $time_end - $time_start;
-echo "Сортировка массива из 10 элементов с помощью встроенной функции sort, выполненная 1000 раз занимает $time2 секунд.\n";
+echo "Сортировка массива из 10 элементов с помощью встроенной функции sort, выполненная 10000 раз занимает $time2 секунд.\n";
 echo "<br>";
 $rez=round($time1/$time2, 0);
 echo "Этот пример показывает, что встроенная функция работает приблизительно в $rez раз быстрее.";
